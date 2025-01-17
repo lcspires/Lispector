@@ -19,30 +19,30 @@
     <!-- Container Principal -->
     <div x-data="{ openTab: 1 }" class="h-screen flex flex-col">
         <!-- Cabeçalho Fixo com Abas -->
-        <header class="bg-white shadow-md fixed top-0 w-full z-10">
-            <div class="max-w-7xl mx-auto flex items-center px-4">
-                <ul class="flex space-x-4 w-full">
+        <header class="bg-gray-800 shadow-md fixed top-0 w-full z-10">
+            <div class="max-w-7xl mx-auto flex items-center px-4 py-3">
+                <ul class="flex space-x-6 w-full">
                     <li>
                         <a href="#"
-                           :class="{ 'bg-blue-700 text-white': openTab === 1, 'text-gray-700': openTab !== 1 }"
+                           :class="{ 'bg-blue-700 text-white': openTab === 1, 'text-gray-300': openTab !== 1 }"
                            @click.prevent="openTab = 1"
-                           class="block py-2 px-6 rounded-t-md transition-all duration-200 hover:bg-blue-800 hover:text-white text-center">
+                           class="block py-2 px-5 rounded-t-md transition-all duration-200 hover:bg-blue-800 hover:text-white text-center text-sm font-medium">
                             Configurações
                         </a>
                     </li>
                     <li>
                         <a href="#"
-                           :class="{ 'bg-blue-700 text-white': openTab === 2, 'text-gray-700': openTab !== 2 }"
+                           :class="{ 'bg-blue-700 text-white': openTab === 2, 'text-gray-300': openTab !== 2 }"
                            @click.prevent="openTab = 2"
-                           class="block py-2 px-6 rounded-t-md transition-all duration-200 hover:bg-blue-800 hover:text-white text-center">
+                           class="block py-2 px-5 rounded-t-md transition-all duration-200 hover:bg-blue-800 hover:text-white text-center text-sm font-medium">
                             Inventário
                         </a>
                     </li>
                     <li>
                         <a href="#"
-                           :class="{ 'bg-blue-700 text-white': openTab === 3, 'text-gray-700': openTab !== 3 }"
+                           :class="{ 'bg-blue-700 text-white': openTab === 3, 'text-gray-300': openTab !== 3 }"
                            @click.prevent="openTab = 3"
-                           class="block py-2 px-6 rounded-t-md transition-all duration-200 hover:bg-blue-800 hover:text-white text-center">
+                           class="block py-2 px-5 rounded-t-md transition-all duration-200 hover:bg-blue-800 hover:text-white text-center text-sm font-medium">
                             Placar
                         </a>
                     </li>
@@ -51,49 +51,49 @@
         </header>
 
         <!-- Conteúdo Principal -->
-        <main class="flex-grow pt-16">
-            <div class="w-full max-w-7xl mx-auto h-full bg-white rounded-lg shadow-md p-4 grid grid-cols-12 gap-4">
+        <main class="flex-grow mt-20"> <!-- Ajuste no espaçamento superior -->
+            <div class="w-full max-w-7xl mx-auto h-full bg-white rounded-lg shadow-md p-6 grid grid-cols-12 gap-6">
                 <!-- Configurações -->
-                <div x-show="openTab === 1" class="col-span-12 grid grid-cols-12 gap-4">
-                    <div class="col-span-4 bg-gray-100 p-4 rounded-md shadow-sm">
-                        <h3 class="text-sm font-semibold text-gray-800 mb-2">Frontend</h3>
-                        <p class="text-xs text-gray-600">Tailwind CSS</p>
-                        <p class="text-xs text-gray-600">Alpine.js</p>
-                        <p class="text-xs text-gray-600">Laravel Echo</p>
+                <div x-show="openTab === 1" class="col-span-12 grid grid-cols-12 gap-6">
+                    <div class="col-span-4 bg-gray-50 p-6 rounded-md shadow-md">
+                        <h3 class="text-base font-semibold text-gray-800 mb-3">Frontend</h3>
+                        <p class="text-sm text-gray-600">Tailwind CSS</p>
+                        <p class="text-sm text-gray-600">Alpine.js</p>
+                        <p class="text-sm text-gray-600">Laravel Echo</p>
                     </div>
-                    <div class="col-span-4 bg-gray-100 p-4 rounded-md shadow-sm">
-                        <h3 class="text-sm font-semibold text-gray-800 mb-2">Backend</h3>
-                        <p class="text-xs text-gray-600">Laravel</p>
-                        <p class="text-xs text-gray-600">Redis</p>
-                        <p class="text-xs text-gray-600">WebSockets</p>
+                    <div class="col-span-4 bg-gray-50 p-6 rounded-md shadow-md">
+                        <h3 class="text-base font-semibold text-gray-800 mb-3">Backend</h3>
+                        <p class="text-sm text-gray-600">Laravel</p>
+                        <p class="text-sm text-gray-600">Redis</p>
+                        <p class="text-sm text-gray-600">WebSockets</p>
                     </div>
-                    <div class="col-span-4 bg-gray-100 p-4 rounded-md shadow-sm">
-                        <h3 class="text-sm font-semibold text-gray-800 mb-2">Mobile</h3>
-                        <p class="text-xs text-gray-600">API RESTful (POST)</p>
+                    <div class="col-span-4 bg-gray-50 p-6 rounded-md shadow-md">
+                        <h3 class="text-base font-semibold text-gray-800 mb-3">Mobile</h3>
+                        <p class="text-sm text-gray-600">API RESTful (POST)</p>
                     </div>
                 </div>
 
                 <!-- Inventário -->
-                <div x-show="openTab === 2" class="col-span-12 grid grid-cols-12 gap-4">
+                <div x-show="openTab === 2" class="col-span-12 grid grid-cols-12 gap-6">
                     <div class="col-span-12">
                         <table class="w-full text-left border-collapse">
-                            <thead>
+                            <thead class="bg-gray-200">
                                 <tr>
-                                    <th class="border-b p-2 text-sm font-semibold text-gray-800">Item</th>
-                                    <th class="border-b p-2 text-sm font-semibold text-gray-800">Quantidade</th>
-                                    <th class="border-b p-2 text-sm font-semibold text-gray-800">Status</th>
+                                    <th class="border-b p-3 text-sm font-semibold text-gray-800">Item</th>
+                                    <th class="border-b p-3 text-sm font-semibold text-gray-800">Quantidade</th>
+                                    <th class="border-b p-3 text-sm font-semibold text-gray-800">Status</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td class="border-b p-2 text-sm text-gray-700">Item A</td>
-                                    <td class="border-b p-2 text-sm text-gray-700">10</td>
-                                    <td class="border-b p-2 text-sm text-gray-700">Disponível</td>
+                                    <td class="border-b p-3 text-sm text-gray-700">Item A</td>
+                                    <td class="border-b p-3 text-sm text-gray-700">10</td>
+                                    <td class="border-b p-3 text-sm text-gray-700">Disponível</td>
                                 </tr>
                                 <tr>
-                                    <td class="border-b p-2 text-sm text-gray-700">Item B</td>
-                                    <td class="border-b p-2 text-sm text-gray-700">5</td>
-                                    <td class="border-b p-2 text-sm text-gray-700">Baixa Quantidade</td>
+                                    <td class="border-b p-3 text-sm text-gray-700">Item B</td>
+                                    <td class="border-b p-3 text-sm text-gray-700">5</td>
+                                    <td class="border-b p-3 text-sm text-gray-700">Baixa Quantidade</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -101,77 +101,60 @@
                 </div>
 
                 <!-- Placar -->
-<div x-show="openTab === 3" class="col-span-12">
-    <h2 class="text-lg font-bold text-gray-800 mb-4">Placar</h2>
-    <p class="text-gray-700 mb-6">Visualize os resultados no placar e preencha as informações abaixo:</p>
-    
-    <form class="grid grid-cols-12 gap-4">
-        <!-- Campo de texto -->
-        <div class="col-span-6">
-            <label for="username" class="block text-sm font-medium text-gray-700 mb-1">Nome de Usuário</label>
-            <input type="text" id="username" name="username" 
-                class="block w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm" 
-                placeholder="Digite seu nome de usuário">
-        </div>
+                <div x-show="openTab === 3" class="col-span-12">
+                    <h2 class="text-xl font-bold text-gray-800 mb-4">Placar</h2>
+                    <p class="text-gray-700 mb-4">Visualize os resultados no placar e preencha as informações abaixo:</p>
 
-        <!-- Campo de e-mail -->
-        <div class="col-span-6">
-            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">E-mail</label>
-            <input type="email" id="email" name="email" 
-                class="block w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm" 
-                placeholder="Digite seu e-mail">
-        </div>
+                    <form class="grid grid-cols-12 gap-6">
+                        <!-- Campos do formulário -->
+                        <div class="col-span-6">
+                            <label for="username" class="block text-sm font-medium text-gray-700 mb-2">Nome de Usuário</label>
+                            <input type="text" id="username" name="username"
+                                class="block w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm" 
+                                placeholder="Digite seu nome de usuário">
+                        </div>
 
-        <!-- Campo de senha -->
-        <div class="col-span-6">
-            <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Senha</label>
-            <input type="password" id="password" name="password" 
-                class="block w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm" 
-                placeholder="Digite sua senha">
-        </div>
+                        <div class="col-span-6">
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">E-mail</label>
+                            <input type="email" id="email" name="email"
+                                class="block w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm" 
+                                placeholder="Digite seu e-mail">
+                        </div>
 
-        <!-- Campo de data -->
-        <div class="col-span-6">
-            <label for="birthdate" class="block text-sm font-medium text-gray-700 mb-1">Data de Nascimento</label>
-            <input type="date" id="birthdate" name="birthdate" 
-                class="block w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm">
-        </div>
+                        <!-- Outros campos -->
+                        <div class="col-span-6">
+                            <label for="password" class="block text-sm font-medium text-gray-700 mb-2">Senha</label>
+                            <input type="password" id="password" name="password"
+                                class="block w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm"
+                                placeholder="Digite sua senha">
+                        </div>
 
-        <!-- Campo de seleção -->
-        <div class="col-span-6">
-            <label for="role" class="block text-sm font-medium text-gray-700 mb-1">Função</label>
-            <select id="role" name="role" 
-                class="block w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm">
-                <option value="admin">Administrador</option>
-                <option value="editor">Editor</option>
-                <option value="viewer">Visualizador</option>
-            </select>
-        </div>
+                        <div class="col-span-6">
+                            <label for="birthdate" class="block text-sm font-medium text-gray-700 mb-2">Data de Nascimento</label>
+                            <input type="date" id="birthdate" name="birthdate"
+                                class="block w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm">
+                        </div>
 
-        <!-- Checkboxes -->
-        <div class="col-span-6">
-            <span class="block text-sm font-medium text-gray-700 mb-1">Preferências</span>
-            <label class="inline-flex items-center">
-                <input type="checkbox" name="preferences" value="news" 
-                    class="form-checkbox text-blue-500">
-                <span class="ml-2 text-sm text-gray-700">Receber Notícias</span>
-            </label>
-            <label class="inline-flex items-center ml-4">
-                <input type="checkbox" name="preferences" value="updates" 
-                    class="form-checkbox text-blue-500">
-                <span class="ml-2 text-sm text-gray-700">Receber Atualizações</span>
-            </label>
-        </div>
+                        <!-- Função -->
+                        <div class="col-span-6">
+                            <label for="role" class="block text-sm font-medium text-gray-700 mb-2">Função</label>
+                            <select id="role" name="role" 
+                                class="block w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm">
+                                <option value="admin">Administrador</option>
+                                <option value="editor">Editor</option>
+                                <option value="viewer">Visualizador</option>
+                            </select>
+                        </div>
 
-        <!-- Botões -->
-        <div class="col-span-12 flex justify-end space-x-4">
-            <button type="reset" 
-                class="px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 focus:outline-none text-sm">Limpar</button>
-            <button type="submit" 
-                class="px-4 py-2 bg-blue-700 text-white rounded-md hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 text-sm">Enviar</button>
-        </div>
-    </form>
-</div>
+                        <!-- Botões -->
+                        <div class="col-span-12 flex justify-end space-x-4 mt-4">
+                            <button type="reset" 
+                                class="px-6 py-2 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400 focus:outline-none text-sm">Limpar</button>
+                            <button type="submit" 
+                                class="px-6 py-2 bg-blue-700 text-white rounded-md hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 text-sm">Enviar</button>
+                        </div>
+                    </form>
+                </div>
 
             </div>
         </main>
