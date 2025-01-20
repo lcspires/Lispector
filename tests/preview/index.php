@@ -1,47 +1,18 @@
 <?php
 
-class Caracteristicas {
-	protected $nome;
-	private $idade;
-	private $cpf;
+// Criando uma instância de People
+$people = new People();
 
-	public function __construct(string $nome, int $idade, string $cpf = null)
-	{
-		$this->nome = $nome;
-		$this->idade = $idade;
-		$this->cpf = $cpf;
-	}
+// Dados para criação
+$data = [
+    'name' => 'John Doe',
+    'age' => 30,
+    'email' => 'john.doe@example.com',
+    'password' => 'supersecret', // Esse campo será ocultado
+];
 
-	public function setCPF(string $cpf)
-	{
-		$this->cpf = $cpf;
-	}
+// Salvar no banco de dados
+$people->save($data);
 
-	protected function getCPF(): ?string
-	{
-		if ($this->cpf != null){
-			return $this->cpf;
-		} else {
-			return 'não cadastrado';
-		}
-	}
-}
-
-class Pessoa extends Caracteristicas {
-	private $time;
-
-	public function __construct(string $nome, int $idade, string $time, string $cpf = null)
-	{
-		parent::__construct($nome, $idade, $cpf);
-		$this->time = $time;
-	}
-
-	public function getCPF(): ?string
-	{
-		return parent::getCPF();
-	}
-}
-
-$userTest = new Pessoa('Lucas', 29, 'Palmeiras');
-echo $userTest->getCPF();
-var_dump($userTest);
+// Consultar e exibir o registro salvo
+var_dump($people);
