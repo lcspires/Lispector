@@ -19,14 +19,18 @@ class Caracteristicas {
 
 	protected function getCPF(): ?string
 	{
-		return $this->cpf;
+		if ($this->cpf != null){
+			return $this->cpf;
+		} else {
+			return 'não cadastrado';
+		}
 	}
 }
 
 class Pessoa extends Caracteristicas {
 	private $time;
 
-	public function __construct(string $nome, int $idade, string $cpf = null, string $time = null)
+	public function __construct(string $nome, int $idade, string $time, string $cpf = null)
 	{
 		parent::__construct($nome, $idade, $cpf);
 		$this->time = $time;
@@ -38,5 +42,6 @@ class Pessoa extends Caracteristicas {
 	}
 }
 
-$userTest = new Pessoa('Lucas', 29, '060.963.215-93', 'Palmeiras');
+$userTest = new Pessoa('Lucas', 29, 'Palmeiras');
 echo $userTest->getCPF();
+var_dump($userTest);

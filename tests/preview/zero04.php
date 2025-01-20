@@ -38,5 +38,5 @@ class Pessoa extends Caracteristicas {
 	}
 }
 
-$userTest = new Pessoa('Lucas', 29, '060.963.215-93', 'Palmeiras');
+$userTest = new Pessoa('Jorge', 21, '031.946.215-96', 'Vitória');
 echo $userTest->getCPF();
